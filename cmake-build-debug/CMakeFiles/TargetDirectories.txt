@@ -1,0 +1,5 @@
+C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/CMakeFiles/libTrie.dir
+C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/CMakeFiles/Trie.dir
+C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/CMakeFiles/testExec.dir
+C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/CMakeFiles/rebuild_cache.dir

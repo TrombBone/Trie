@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Trie"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="libTrie">
+				<Option output="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/libTrie.lib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 libTrie"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="libTrie/fast">
+				<Option output="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/libTrie.lib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 libTrie/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Trie">
+				<Option output="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/Trie.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 Trie"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Trie/fast">
+				<Option output="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/Trie.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 Trie/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testExec">
+				<Option output="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/testExec.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 testExec"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testExec/fast">
+				<Option output="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug/testExec.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 testExec/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/kruch/CLionProjects/Trie/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\kruch\CLionProjects\Trie\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/kruch/CLionProjects/Trie/Tests.c">
+			<Option target="testExec"/>
+		</Unit>
+		<Unit filename="C:/Users/kruch/CLionProjects/Trie/Tests.h">
+			<Option target="testExec"/>
+		</Unit>
+		<Unit filename="C:/Users/kruch/CLionProjects/Trie/Trie.c">
+			<Option target="libTrie"/>
+		</Unit>
+		<Unit filename="C:/Users/kruch/CLionProjects/Trie/Trie.h">
+			<Option target="libTrie"/>
+		</Unit>
+		<Unit filename="C:/Users/kruch/CLionProjects/Trie/main.c">
+			<Option target="Trie"/>
+		</Unit>
+		<Unit filename="C:/Users/kruch/CLionProjects/Trie/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

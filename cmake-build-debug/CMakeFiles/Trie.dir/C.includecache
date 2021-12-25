@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/kruch/CLionProjects/Trie/Trie.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+
+C:/Users/kruch/CLionProjects/Trie/main.c
+stdio.h
+-
+stdlib.h
+-
+Trie.h
+C:/Users/kruch/CLionProjects/Trie/Trie.h
+
