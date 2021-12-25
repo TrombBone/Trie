@@ -2,9 +2,22 @@
 #include <stdlib.h>
 #include "Trie.h"
 
+/*
+ * Программа создаёт префиксное дерево из слов, поданных в входном файле (1-й аргумент).
+ * На выходе выдаёт файл (2-й аргумент) с деревом в виде списка слов, перечисленных в порядке,
+ * в котором они находятся в дереве (по сути в алфавитном).
+ *
+ * //cd C:\<your_path>\Trie\cmake-build-debug
+ * //Trie.exe inp.txt out.txt
+ */
 int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        printf("\nWrong command line arguments\n");
+        return -1;
+    }
+
     //"the", "a", "there", "answer", "any", "by", "bye", "their"
-    FILE *inp = fopen("inp.txt", "r");
+    FILE *inp = fopen(argv[1], "r");
     char **keys = (char**)malloc(sizeof(char*));
     int n = 0;
     while (!feof(inp)) {
@@ -26,11 +39,11 @@ int main(int argc, char *argv[]) {
     TrieNode *root = createNode();
     for (int i = 0; i < n; i++) insert(root, keys[i]);
 
-    FILE *out = fopen("out.txt", "w");
+    FILE *out = fopen(argv[2], "w");
     char *str = (char *) malloc(maxKeySize*sizeof(char *));
 
     printTrieFile(root, str, 0, out);
-    display(root, str, 0);
+    //display(root, str, 0);
 
     fclose(out);
     free(keys);
