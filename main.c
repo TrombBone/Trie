@@ -11,7 +11,7 @@
  * //cd C:\<your_path>\Trie\cmake-build-debug
  * //Trie.exe inp.txt out.txt
  */
-int main() {
+int main(int argc, char *argv[]) {
 //    if (argc != 2) {
 //        printf("\nWrong command line arguments\n");
 //        return -1;
