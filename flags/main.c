@@ -11,15 +11,15 @@
  * //cd C:\<your_path>\Trie\cmake-build-debug
  * //Trie.exe inp.txt out.txt
  */
-int main() {
+int main(int argc, char *argv[]) {
 //    if (argc != 2) {
 //        printf("\nWrong command line arguments\n");
 //        return -1;
 //    }
 
     //"the", "a", "there", "answer", "any", "by", "bye", "their"
-//    FILE *inp = fopen(argv[1], "r");
-    FILE *inp = fopen("inp.txt", "r");
+    FILE *inp = fopen(argv[1], "r");
+//    FILE *inp = fopen("inp.txt", "r");
 
     char **keys = (char**)malloc(sizeof(char*));
 
@@ -74,8 +74,8 @@ int main() {
     TrieNode *root = createNode();
     for (int i = 0; i < n; i++) insert(root, keys[i]);
 
-//    FILE *out = fopen(argv[2], "w");
-    FILE *out = fopen("out.txt", "w");
+    FILE *out = fopen(argv[2], "w");
+//    FILE *out = fopen("out.txt", "w");
     char *str = (char *) malloc(maxKeySize*sizeof(char *));
 
     printTrieFile(root, str, 0, out);

@@ -1,0 +1,18 @@
+# Файлы для сборки исполнимого файла
+OBJS = main.c \
+lib.a
+#Вызываемые приложения
+CC = riscv64-unknown-elf-gcc.exe
+# Параметры компиляции
+CFLAGS= -march=rv64iac -mabi=lp64 -O1 --save-temps -pedantic -Wall -Wextra
+# Включаемые файлы следует искать в текущем каталоге
+INCLUDES+= -I .
+# Make должна искать файлы *.c и *.a в текущей директории
+vpath %.c .
+vpath %.a .
+# Чтобы достичь цели "all", требуется собрать исполнимый файл
+all: a.out
+# Сборка исполнимого файла и удаление мусора
+a.out: $(OBJS)
+	$(CC) $(CFLAGS) $(INCLUDES) $^
+	del *.o *.i *.s *.d
