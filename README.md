@@ -1,4 +1,6 @@
-# Trie
+# Trie on C
 
-LowLevelProgramming on Peter's The Great Polytechnical University
-lab5
+LowLevel programming on Peter the Great St.Petersburg Polytechnic University
+lab5: C static library and console program
+
+Option 11: Trie
