@@ -4,7 +4,8 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
+#define UPPER_FOUR_BITS(charToUp) ((((int) charToUp) & 0xF0) >> 4)
+#define LOWER_FOUR_BITS(charToLow) (((int) charToLow) & 0x0F)
 
 typedef struct TrieNodeStruct { //~class TrieNodeStruct
     struct TrieNodeStruct *children[16];
@@ -12,9 +13,9 @@ typedef struct TrieNodeStruct { //~class TrieNodeStruct
     int childrenCount;
 } TrieNode;
 
-TrieNode *createNode(void);
-bool search(TrieNode *root, const char *key);
-void insert(TrieNode *root, const char *key);
-TrieNode *del(TrieNode *root, const char *key);
+TrieNode* createNode(void);
+bool search(TrieNode* root, const char* key);
+void insert(TrieNode* root, const char* key);
+TrieNode* del(TrieNode* root, const char *key);
 void display(TrieNode* root, char str[], int index, int level);
-void printTrieFile(TrieNode* root, char str[], int index, int level, FILE *out);
+void printTrieFile(TrieNode* root, char str[], int index, int level, FILE* out);

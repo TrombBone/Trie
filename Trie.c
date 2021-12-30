@@ -1,9 +1,9 @@
 #include "Trie.h"
 
-TrieNode *createNode(void) { //fun createNode()
+TrieNode* createNode(void) { //fun createNode()
 
-    TrieNode *thisNode = NULL;
-    thisNode = (TrieNode *) malloc(sizeof(TrieNode));
+    TrieNode* thisNode = NULL;
+    thisNode = (TrieNode*) malloc(sizeof(TrieNode));
 
     if (thisNode) {
         thisNode->isEndOfWord = false;
@@ -14,18 +14,18 @@ TrieNode *createNode(void) { //fun createNode()
     return thisNode;
 }
 
-bool search(TrieNode *root, const char *key) {
-    TrieNode *thisNode = root;
-    TrieNode *tmpNode;
+bool search(TrieNode* root, const char* key) {
+    TrieNode* thisNode = root;
+    TrieNode* tmpNode;
 
     for (int i = 0; i < strlen(key); i++) {
         // used upper four bits
-        tmpNode = thisNode->children[((((int)key[i]) & 0xF0)>>4)];
+        tmpNode = thisNode->children[UPPER_FOUR_BITS(key[i])];
         if (tmpNode != NULL) thisNode = tmpNode;
         else return NULL; // key not found
 
         // used lower four bits
-        tmpNode = thisNode->children[((int)key[i]) & 0x0F];
+        tmpNode = thisNode->children[LOWER_FOUR_BITS(key[i])];
         if(tmpNode != NULL) thisNode = tmpNode;
         else return(NULL); // key not found
     }
@@ -33,14 +33,14 @@ bool search(TrieNode *root, const char *key) {
     return thisNode->isEndOfWord && thisNode != NULL;
 }
 
-void insert(TrieNode *root, const char *key) {
-    TrieNode *thisNode = root;
-    TrieNode *tmpNode;
+void insert(TrieNode* root, const char* key) {
+    TrieNode* thisNode = root;
+    TrieNode* tmpNode;
     int index;
 
     for (int i = 0; i < 2*strlen(key); i++) {
-        if(i % 2 == 0) index = (((int)key[i/2]) & 0xF0)>>4; // use upper four bits next
-        else index = ((int)key[i/2]) & 0x0F; // use lower four bits next
+        if(i % 2 == 0) index = UPPER_FOUR_BITS(key[i/2]); // use upper four bits next
+        else index = LOWER_FOUR_BITS(key[i/2]); // use lower four bits next
         tmpNode = thisNode->children[index];
 
         if(tmpNode != NULL) thisNode = tmpNode;
@@ -56,7 +56,7 @@ void insert(TrieNode *root, const char *key) {
     thisNode->childrenCount += 1;
 }
 
-TrieNode *del(TrieNode *root, const char *key) {
+TrieNode* del(TrieNode* root, const char* key) {
     TrieNode *thisNode = root;
     TrieNode *tmpNode;
     TrieNode *delStartNode = root;
@@ -64,8 +64,8 @@ TrieNode *del(TrieNode *root, const char *key) {
     int index;
 
     for(int i = 0; i < 2*strlen(key); i++) {
-        if(i % 2 == 0) index = (((int)key[i/2]) & 0xF0)>>4; // use upper four bits
-        else index = ((int)key[i/2]) & 0x0F; // use lower four bits
+        if(i % 2 == 0) index = UPPER_FOUR_BITS(key[i/2]); // use upper four bits
+        else index = LOWER_FOUR_BITS(key[i/2]); // use lower four bits
         tmpNode = thisNode->children[index];
 
         if(tmpNode != NULL) {
@@ -77,7 +77,7 @@ TrieNode *del(TrieNode *root, const char *key) {
         } else return(NULL); // key did not exist
     }
 
-    TrieNode *safeThisNode;
+    TrieNode* safeThisNode;
     if(thisNode == NULL) return(NULL); // key did not exist
     else {
         thisNode->childrenCount -= 1;
@@ -87,8 +87,8 @@ TrieNode *del(TrieNode *root, const char *key) {
     if(thisNode->childrenCount == 0) {
         thisNode = delStartNode;
         for(int i = delStartPos; i < 2*strlen(key); i++) {
-            if(i % 2 == 0) index = (((int)key[i/2]) & 0xF0)>>4; // use upper four bits
-            else index = ((int)key[i/2]) & 0x0F; // use lower four bits
+            if(i % 2 == 0) index = UPPER_FOUR_BITS(key[i/2]); // use upper four bits
+            else index = LOWER_FOUR_BITS(key[i/2]); // use lower four bits
             tmpNode = thisNode->children[index];
             thisNode->children[index] = NULL;
             thisNode->childrenCount -= 1;
@@ -122,10 +122,10 @@ void display(TrieNode* root, char str[], int index, int level) {
 //    free(str);
 }
 
-void printTrieFile(TrieNode* root, char str[], int index, int level, FILE *out) {
+void printTrieFile(TrieNode* root, char str[], int index, int level, FILE* out) {
     if (root->isEndOfWord) {
         str[level/2] = '\n';
-        str[level/2+1] = '\0';
+        str[level/2 + 1] = '\0';
         fputs(str, out);
     }
 

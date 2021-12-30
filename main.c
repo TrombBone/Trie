@@ -19,14 +19,14 @@ int main(int argc, char *argv[]) {
 
     //"the", "a", "there", "answer", "any", "by", "bye", "their"
 //    FILE *inp = fopen(argv[1], "r");
-    FILE *inp = fopen("inp.txt", "r");
+    FILE* inp = fopen("inp.txt", "r");
 
-    char **keys = (char**)malloc(sizeof(char*));
+    char** keys = (char**)malloc(sizeof(char*));
 
     int n = 0;
     int partsWordCounter = 0;
     int memoryAlloc = 256;
-    char *tmpKey = (char*) malloc(sizeof(char) * memoryAlloc);
+    char* tmpKey = (char*) malloc(sizeof(char) * memoryAlloc);
     bool isEndWord = true;
 
     while (!feof(inp)) {
@@ -70,17 +70,17 @@ int main(int argc, char *argv[]) {
     }
     maxKeySize += 2;
 
-    TrieNode *root = createNode();
+    TrieNode* root = createNode();
     for (int i = 0; i < n-1; i++) insert(root, keys[i]);
 
 //    FILE *out = fopen(argv[2], "w");
-    FILE *out = fopen("out.txt", "w");
+//    FILE *out = fopen("out.txt", "w");
     char* str = (char*) malloc(maxKeySize * sizeof(char*));
 
-    printTrieFile(root, str, 0, 0, out);
-//    display(root, str, 0, 0);
+//    printTrieFile(root, str, 0, 0, out);
+    display(root, str, 0, 0);
 
-    fclose(out);
+//    fclose(out);
     free(keys);
     free(str);
 
