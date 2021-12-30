@@ -26,14 +26,14 @@ int main(int argc, char *argv[]) {
     int n = 0;
     int partsWordCounter = 0;
     int memoryAlloc = 256;
-    char *tmpKey = (char*)malloc(sizeof(char)*memoryAlloc);
+    char *tmpKey = (char*) malloc(sizeof(char) * memoryAlloc);
     bool isEndWord = true;
 
     while (!feof(inp)) {
-        if (isEndWord) keys[n] = (char*)malloc(sizeof(char)*memoryAlloc);
-        else keys[n] = (char*)realloc(keys[n], sizeof(char)*memoryAlloc*(partsWordCounter+1)+1);
+        if (isEndWord) keys[n] = (char*) malloc(sizeof(char) * memoryAlloc);
+        else keys[n] = (char*) realloc(keys[n], sizeof(char) * memoryAlloc * (partsWordCounter + 1) + 1);
 
-        fgets(tmpKey, memoryAlloc+1, inp);
+        fgets(tmpKey, memoryAlloc+1, inp); // this line needs to be fixed!!!
 
         int keySize = strlen(tmpKey);
 
@@ -47,7 +47,6 @@ int main(int argc, char *argv[]) {
 
         if (tmpKey[keySize - 1] != '\n') {
             isEndWord = false;
-//            printf("%s\n", keys[n]);
             partsWordCounter += 1;
         } else {
             isEndWord = true;
@@ -67,19 +66,19 @@ int main(int argc, char *argv[]) {
         if (thisLen > maxKeySize) maxKeySize = thisLen;
         int keyLen = strlen(keys[i]);
         keys[i][keyLen-1] = '\0';
-//        printf("%s", keys[i]);
+//        printf("%s\n", keys[i]);
     }
     maxKeySize += 2;
 
     TrieNode *root = createNode();
-    for (int i = 0; i < n; i++) insert(root, keys[i]);
+    for (int i = 0; i < n-1; i++) insert(root, keys[i]);
 
 //    FILE *out = fopen(argv[2], "w");
     FILE *out = fopen("out.txt", "w");
-    char *str = (char *) malloc(maxKeySize*sizeof(char *));
+    char* str = (char*) malloc(maxKeySize * sizeof(char*));
 
-    printTrieFile(root, str, 0, out);
-    display(root, str, 0);
+    printTrieFile(root, str, 0, 0, out);
+//    display(root, str, 0, 0);
 
     fclose(out);
     free(keys);

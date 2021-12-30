@@ -4,7 +4,7 @@ lib.a
 #Вызываемые приложения
 CC = riscv64-unknown-elf-gcc.exe
 # Параметры компиляции
-CFLAGS= -march=rv64iac -mabi=lp64 -O1 --save-temps -pedantic -Wall -Wextra
+CFLAGS= -march=rv64iac -mabi=lp64 -O1 --save-temps -std=c11 -pedantic -Wall -Wextra
 # Включаемые файлы следует искать в текущем каталоге
 INCLUDES+= -I .
 # Make должна искать файлы *.c и *.a в текущей директории

@@ -28,7 +28,7 @@ void testDel() {
 
     assert(search(root, "then"));
     assert(search(root, "this"));
-    del(root, "then", 0);
+    del(root, "then");
     assert(!search(root, "then"));
     assert(search(root, "this"));
 }
