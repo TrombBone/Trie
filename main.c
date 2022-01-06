@@ -60,29 +60,23 @@ int main(int argc, char *argv[]) {
     }
     fclose(inp);
 
-    int maxKeySize = 0;
     for (int i = 0; i < n-1; i++) {
-        int thisLen = (int) strlen(keys[i]);
-        if (thisLen > maxKeySize) maxKeySize = thisLen;
         int keyLen = strlen(keys[i]);
         keys[i][keyLen-1] = '\0';
 //        printf("%s\n", keys[i]);
     }
-    maxKeySize += 2;
 
     TrieNode* root = createNode();
     for (int i = 0; i < n-1; i++) insert(root, keys[i]);
 
 //    FILE *out = fopen(argv[2], "w");
 //    FILE *out = fopen("out.txt", "w");
-    char* str = (char*) malloc(maxKeySize * sizeof(char*));
 
-//    printTrieFile(root, str, 0, 0, out);
-    display(root, str, 0, 0);
+//    printTrieFile(root, out);
+    display(root);
 
 //    fclose(out);
     free(keys);
-    free(str);
 
     return 0;
 }

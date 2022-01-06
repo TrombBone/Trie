@@ -2,7 +2,7 @@
 
 TrieNode* createNode(void) { //fun createNode()
 
-    TrieNode* thisNode = NULL;
+    TrieNode *thisNode = NULL;
     thisNode = (TrieNode*) malloc(sizeof(TrieNode));
 
     if (thisNode) {
@@ -14,9 +14,9 @@ TrieNode* createNode(void) { //fun createNode()
     return thisNode;
 }
 
-bool search(TrieNode* root, const char* key) {
-    TrieNode* thisNode = root;
-    TrieNode* tmpNode;
+bool search(TrieNode *root, const char *key) {
+    TrieNode *thisNode = root;
+    TrieNode *tmpNode;
 
     for (int i = 0; i < strlen(key); i++) {
         // used upper four bits
@@ -33,7 +33,7 @@ bool search(TrieNode* root, const char* key) {
     return thisNode->isEndOfWord && thisNode != NULL;
 }
 
-void insert(TrieNode* root, const char* key) {
+void insert(TrieNode *root, const char *key) {
     TrieNode* thisNode = root;
     TrieNode* tmpNode;
     int index;
@@ -56,7 +56,7 @@ void insert(TrieNode* root, const char* key) {
     thisNode->childrenCount += 1;
 }
 
-TrieNode* del(TrieNode* root, const char* key) {
+TrieNode* del(TrieNode *root, const char *key) {
     TrieNode *thisNode = root;
     TrieNode *tmpNode;
     TrieNode *delStartNode = root;
@@ -101,32 +101,18 @@ TrieNode* del(TrieNode* root, const char* key) {
     return(safeThisNode);
 }
 
-void display(TrieNode* root, char str[], int index, int level) {
-//    if (level == 0) str = (char*) malloc(sizeof(char));
-//    else str = (char*) realloc(str, sizeof(char) * (level/2 + 3));
-    if (root->isEndOfWord) {
-        str[level/2] = '\0';
-        printf("%s\n", str);
-    }
-
-    for (int i = 0; i < 16; i++) {
-        if (root->children[i]) {
-            if(level % 2 == 0) index = i << 4;
-            else {
-                index = (index & 0xF0) | i;
-                str[level/2] = (char) index;
-            }
-            display(root->children[i], str, index, level + 1);
-        }
-    }
-//    free(str);
+void display(TrieNode *root) {
+    char *tmp = (char *) malloc(sizeof(char));
+    displayMain(root, &tmp, 0, 0);
 }
 
-void printTrieFile(TrieNode* root, char str[], int index, int level, FILE* out) {
+void displayMain(TrieNode *root, char **str, int index, int level) {
+    if (level == 0) *str = (char *) malloc(sizeof(char));
+    else if (level % 2 == 0) *str = (char *) realloc(*str, sizeof(char) * (level/2 + 1));
+
     if (root->isEndOfWord) {
-        str[level/2] = '\n';
-        str[level/2 + 1] = '\0';
-        fputs(str, out);
+        (*str)[level/2] = '\0';
+        printf("%s\n", *str);// \n
     }
 
     for (int i = 0; i < 16; i++) {
@@ -134,9 +120,36 @@ void printTrieFile(TrieNode* root, char str[], int index, int level, FILE* out) 
             if(level % 2 == 0) index = i << 4;
             else {
                 index = (index & 0xF0) | i;
-                str[level/2] = (char) index;
+                (*str)[level/2] = (char) index;
             }
-            printTrieFile(root->children[i], str, index, level + 1, out);
+            displayMain(root->children[i], str, index, level + 1);
+        }
+    }
+}
+
+void printTrieFile(TrieNode *root, FILE *out) {
+    char *tmp = (char *) malloc(sizeof(char));
+    printTrieFileMain(root, &tmp, 0, 0, out);
+}
+
+void printTrieFileMain(TrieNode *root, char **str, int index, int level, FILE *out) {
+    if (level == 0) *str = (char *) malloc(sizeof(char));
+    else if (level % 2 == 0) *str = (char *) realloc(*str, sizeof(char) * (level/2 + 1));
+
+    if (root->isEndOfWord) {
+        (*str)[level/2] = '\n';
+        (*str)[level/2 + 1] = '\0';
+        fputs(*str, out);
+    }
+
+    for (int i = 0; i < 16; i++) {
+        if (root->children[i]) {
+            if(level % 2 == 0) index = i << 4;
+            else {
+                index = (index & 0xF0) | i;
+                (*str)[level/2] = (char) index;
+            }
+            printTrieFileMain(root->children[i], str, index, level + 1, out);
         }
     }
 }
