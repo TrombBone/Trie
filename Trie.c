@@ -1,6 +1,6 @@
 #include "Trie.h"
 
-TrieNode* createNode(void) { //fun createNode()
+TrieNode* createNode(void) {
 
     TrieNode *thisNode = NULL;
     thisNode = (TrieNode*) malloc(sizeof(TrieNode));
@@ -39,8 +39,8 @@ void insert(TrieNode *root, const char *key) {
     int index;
 
     for (int i = 0; i < 2*strlen(key); i++) {
-        if(i % 2 == 0) index = UPPER_FOUR_BITS(key[i/2]); // use upper four bits next
-        else index = LOWER_FOUR_BITS(key[i/2]); // use lower four bits next
+        if(i % 2 == 0) index = UPPER_FOUR_BITS(key[i/2]);
+        else index = LOWER_FOUR_BITS(key[i/2]);
         tmpNode = thisNode->children[index];
 
         if(tmpNode != NULL) thisNode = tmpNode;
@@ -64,8 +64,8 @@ TrieNode* del(TrieNode *root, const char *key) {
     int index;
 
     for(int i = 0; i < 2*strlen(key); i++) {
-        if(i % 2 == 0) index = UPPER_FOUR_BITS(key[i/2]); // use upper four bits
-        else index = LOWER_FOUR_BITS(key[i/2]); // use lower four bits
+        if(i % 2 == 0) index = UPPER_FOUR_BITS(key[i/2]);
+        else index = LOWER_FOUR_BITS(key[i/2]);
         tmpNode = thisNode->children[index];
 
         if(tmpNode != NULL) {
@@ -87,8 +87,8 @@ TrieNode* del(TrieNode *root, const char *key) {
     if(thisNode->childrenCount == 0) {
         thisNode = delStartNode;
         for(int i = delStartPos; i < 2*strlen(key); i++) {
-            if(i % 2 == 0) index = UPPER_FOUR_BITS(key[i/2]); // use upper four bits
-            else index = LOWER_FOUR_BITS(key[i/2]); // use lower four bits
+            if(i % 2 == 0) index = UPPER_FOUR_BITS(key[i/2]);
+            else index = LOWER_FOUR_BITS(key[i/2]);
             tmpNode = thisNode->children[index];
             thisNode->children[index] = NULL;
             thisNode->childrenCount -= 1;
@@ -112,7 +112,7 @@ void displayMain(TrieNode *root, char **str, int index, int level) {
 
     if (root->isEndOfWord) {
         (*str)[level/2] = '\0';
-        printf("%s\n", *str);// \n
+        printf("%s\n", *str);
     }
 
     for (int i = 0; i < 16; i++) {
