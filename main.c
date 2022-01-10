@@ -12,14 +12,14 @@
  * //Trie.exe inp.txt out.txt
  */
 int main(int argc, char *argv[]) {
-//    if (argc != 2) {
-//        printf("\nWrong command line arguments\n");
-//        return -1;
-//    }
+    if (argc != 2) {
+        printf("\nWrong command line arguments\n");
+        return -1;
+    }
 
     //"the", "a", "there", "answer", "any", "by", "bye", "their"
-//    FILE *inp = fopen(argv[1], "r");
-    FILE* inp = fopen("inp.txt", "r");
+    FILE *inp = fopen(argv[1], "r");
+//    FILE* inp = fopen("inp.txt", "r");
 
     char** keys = (char**)malloc(sizeof(char*));
 
@@ -58,18 +58,18 @@ int main(int argc, char *argv[]) {
     }
     fclose(inp);
 
-    for (int i = 0; i < n; i++) { printf("%s\n", keys[i]); } //print keys
+//    for (int i = 0; i < n; i++) { printf("%s\n", keys[i]); } //print keys
 
     TrieNode* root = createNode();
     for (int i = 0; i < n; i++) insert(root, keys[i]);
 
-//    FILE *out = fopen(argv[2], "w");
+    FILE *out = fopen(argv[2], "w");
 //    FILE *out = fopen("out.txt", "w");
 
-//    printTrieFile(root, out);
+    printTrieFile(root, out);
     display(root);
 
-//    fclose(out);
+    fclose(out);
     free(keys);
 
     return 0;

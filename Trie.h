@@ -18,6 +18,5 @@ bool search(TrieNode *root, const char *key);
 void insert(TrieNode *root, const char *key);
 TrieNode* del(TrieNode *root, const char *key);
 void display(TrieNode *root);
-void displayMain(TrieNode *root, char **str, int index, int level);
 void printTrieFile(TrieNode *root, FILE *out);
-void printTrieFileMain(TrieNode *root, char **str, int index, int level, FILE *out);
+void printTrie(TrieNode *root, char **str, int index, int level, FILE *out);
