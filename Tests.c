@@ -21,16 +21,18 @@ void testSearch() {
 }
 
 void testDel() {
-    char keys[][5] = {"then", "this"};
+    char keys[][10] = {"a", "any", "answer"};
     TrieNode *root = createNode();
 
-    for (int i = 0; i < ARRAY_SIZE(keys); i++) insert(root, keys[i]);
+    for (int i = 0; i < 3; i++) insert(root, keys[i]);
 
-    assert(search(root, "then"));
-    assert(search(root, "this"));
-    del(root, "then");
-    assert(!search(root, "then"));
-    assert(search(root, "this"));
+    assert(search(root, "a"));
+    assert(search(root, "any"));
+    assert(search(root, "answer"));
+    del(root, "a");
+    assert(!search(root, "a"));
+    assert(!search(root, "any"));
+    assert(!search(root, "answer"));
 }
 
 int runAllTests() {
