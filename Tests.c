@@ -31,8 +31,8 @@ void testDel() {
     assert(search(root, "answer"));
     del(root, "a");
     assert(!search(root, "a"));
-    assert(!search(root, "any"));
-    assert(!search(root, "answer"));
+    assert(search(root, "any"));
+    assert(search(root, "answer"));
 }
 
 int runAllTests() {
