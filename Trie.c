@@ -57,6 +57,11 @@ void insert(TrieNode *root, const char *key) {
 }
 
 TrieNode* del(TrieNode *root, const char *key) {
+    if(!search(root, key)) {
+        printf("\nKey did not exist\n");
+        return NULL;
+    }
+
     TrieNode *thisNode = root;
     TrieNode *tmpNode;
     TrieNode *delStartNode = root;
