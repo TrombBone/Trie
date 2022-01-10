@@ -95,13 +95,11 @@ TrieNode* del(TrieNode *root, const char *key) {
             if(i % 2 == 0) index = UPPER_FOUR_BITS(key[i/2]);
             else index = LOWER_FOUR_BITS(key[i/2]);
             tmpNode = thisNode->children[index];
-            thisNode->children[index] = NULL;
-            thisNode->childrenCount -= 1;
             free(thisNode->children[index]);
+            thisNode->childrenCount -= 1;
             thisNode = tmpNode;
         }
         thisNode->isEndOfWord = true;
-        thisNode = NULL;
         free(thisNode);
     } else if (thisNode->isEndOfWord) thisNode->isEndOfWord = false;
 
